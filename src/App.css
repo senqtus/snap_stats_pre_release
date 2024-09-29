@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.heade_left{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+.header-right {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.main {
+  margin-top: 60px; /* Adjust based on your header height */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 200px; /* Adjust as needed */
+}
+
+.left-part, .right-part {
+  flex: 1 1 300px; /* Allows wrapping on smaller screens */
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-part {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+
+}
+
+.buttons-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.top-greeting-text{
+  display: flex;
+}
+.bottom-greeting-text{
+  display: flex;
+}
+
+.right-part {
+  display:flex;
+  background-color: #e0e0e0;
+  align-items: center;
+  justify-content: center;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.row {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem; /* Add space between rows */
+}
+
+.row:last-child {
+  margin-bottom: 0; /* Remove margin from the last row */
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Media Queries for better responsiveness */
+@media (max-width: 768px) {
+  .main {
+    margin-top: 50px; /* Slightly smaller margin for mobile */
+  }
+
+  .top-section {
+    flex-direction: column;
+  }
+
+  .left-part, .right-part {
+    flex-basis: 100%;
+  }
+}
+
+/* Ensure text doesn't overflow on very small screens */
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
